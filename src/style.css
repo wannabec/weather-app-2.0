@@ -24,10 +24,35 @@ li {
   padding: 0;
 }
 
-.weather-app-2 {
+.weather-app-wrapper {
   max-width: 600px;
   margin: 30px auto;
+}
+
+.weather-app-2 {
   padding: 20px;
   border: 1px solid lightgrey;
   border-radius: 5px;
+}
+
+.overview {
+  margin-bottom: 20px;
+}
+
+.weather-today img {
+  margin-right: 8px;
+  height: 60px;
+  width: 60px;
+}
+
+.weather-today strong {
+  color: #202124;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.weather-today span {
+  position: relative;
+  font-size: 16px;
 }
