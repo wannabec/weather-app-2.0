@@ -41,8 +41,18 @@ function displayTemp(response) {
   iconElement.setAttribute("alt", response.data.condition.description);
 }
 
-let apiKey = "8d3005o34ffbab3ta1fb4085f9834b16";
-let city = "London";
-let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+function search(city) {
+  let apiKey = "8d3005o34ffbab3ta1fb4085f9834b16";
+  let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiURL).then(displayTemp);
+}
 
-axios.get(apiURL).then(displayTemp);
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityEnteredElement = document.querySelector("#cityEntered");
+  search(cityEnteredElement.value);
+}
+
+search("London");
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
