@@ -19,12 +19,10 @@ function formatDate(timestamp) {
     "Saturday",
   ];
   let day = days[date.getDay()];
-  return `${day} ${hours} ${minutes}`;
+  return `${day} ${hours}:${minutes}`;
 }
 
 function displayTemp(response) {
-  console.log(response);
-  console.log(response.data.temperature.current);
   let todayTempElement = document.querySelector("#todayTemp");
   let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#description");
@@ -42,5 +40,4 @@ function displayTemp(response) {
 let apiKey = "8d3005o34ffbab3ta1fb4085f9834b16";
 let apiURL = `https://api.shecodes.io/weather/v1/current?query=London&key=${apiKey}&units=metric`;
 
-console.log(apiURL);
 axios.get(apiURL).then(displayTemp);
