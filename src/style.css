@@ -73,6 +73,10 @@ li:first-letter {
   text-decoration: none;
 }
 
+.rh-info {
+  text-align: right;
+}
+
 .forecast {
   margin-top: 20px;
   text-align: center;
